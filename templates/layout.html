@@ -7,8 +7,8 @@
     <meta name="description" content="The Potal Web Site of Amaner!">
     <!-- <meta property="og:image" content="/static/images/torii.jpg"> -->
 
-    <!-- <link rel="stylesheet" href="static/css/template.css"> -->
-    <link rel="stylesheet" href="{{url_for('static', filename='css/template.css')}}">
+    <!-- <link rel="stylesheet" type="text/css" href="static/css/template.css"> -->
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/template.css')}}">
     {% block meta_links %}
 
     {% endblock %}
@@ -94,7 +94,8 @@
     </ul>
 
   </header>
-  <body onContextMenu="alert('右クリック禁止');return false" unselectable="on">
+  <!-- <body onContextMenu="alert('右クリック禁止');return false" unselectable="on"> -->
+  <body>
     {% block content %}
     <!-- ここに別ファイルで書いたコンテンツが入る -->
     {% endblock %}
@@ -102,7 +103,7 @@
   <footer>
 
     <div class="discord">
-      <iframe src="https://discord.com/widget?id=808283612105408533&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
+      <iframe src="https://discord.com/widget?id=808283612105408533&theme=dark" width="95%" height="500" allowtransparency="true" frameborder="0"></iframe>
     </div>
     <div class="links">
       <a href="{{url_for('index')}}">Home</a>

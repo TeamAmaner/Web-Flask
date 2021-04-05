@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block meta_links %}
-<link rel="stylesheet" href="{{url_for('static', filename='css/servers.css')}}"/>
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/servers.css')}}"/>
 {% endblock %}
 
 {% block content %}
@@ -20,7 +20,7 @@
       <br>
     </section>
   </h2>
-  <h2 class="box">
+  <!-- <h2 class="box">
     <section class="name">
       游|界隈ゲーム作成
     </section>
@@ -38,7 +38,30 @@
       カジノ<br>
       ※15歳未満 立ち入り禁止
     </section>
+  </h2> -->
+  {% if server_list %}
+    {% for server in server_list %}
+    <h2 class="box">
+      <img src="{{server.icon_url}}" alt="{{server.name}}">
+      <section class="name">
+        {{server.name}}
+      </section>
+      <br>
+      <section class="description">
+        {{server.description}}
+      </section>
+    </h2>
+    {% endfor %}
+  {% else %}
+  <h2 class="box">
+    <section class="name">
+      現在、登録されている派生鯖はありません。
+    </section>
   </h2>
+  {% endif %}
+
+
+<!-- TODO:派生鯖を追加できる機構を実装  -->
 
   <!-- <h2 class="box">
   <section class="name">
