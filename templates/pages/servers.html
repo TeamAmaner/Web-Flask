@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+{% block meta_links %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/servers.css')}}"/>
+{% endblock %}
+
+{% block content %}
+<h1 class="title">
+  派生鯖一覧
+</h1>
+
+<section class="body">
+
+  <h2 class="box">
+    <section class="name">
+      Vocalocafe
+    </section>
+    <br>
+    <section class="description">
+      本部です
+      <br>
+    </section>
+  </h2>
+  <h2 class="box">
+    <section class="name">
+      游|界隈ゲーム作成
+    </section>
+    <br>
+    <section class="description">
+      界隈のゲームを作る研究所
+    </section>
+  </h2>
+  <h2 class="box">
+    <section class="name">
+      Amaner-Casino
+    </section>
+    <br>
+    <section class="description">
+      カジノ<br>
+      ※15歳未満 立ち入り禁止
+    </section>
+  </h2>
+
+  <!-- <h2 class="box">
+  <section class="name">
+  Ｑ.
+</section>
+<br>
+<section class="description">
+Ａ.
+</section>
+</h2> -->
+
+</section>
+{% endblock %}

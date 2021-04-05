@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Amaner">
+    <meta name="description" content="The Potal Web Site of Amaner!">
+    <!-- <meta property="og:image" content="/static/images/torii.jpg"> -->
+
+    <!-- <link rel="stylesheet" href="static/css/test.css">
+    <script src="static/js/test.js"></script>
+    <link rel="stylesheet" href="static/css/template.css"> -->
+    <link rel="stylesheet" href="{{url_for('static', filename='css/test.css')}}"/>
+    <script src="{{url_for('static', filename='js/test.js')}}"></script>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/template.css')}}">
+    {% block meta_links %}
+
+    {% endblock %}
+
+    <title>{{ title }}</title>
+  </head>
+  <header>
+
+    <ul class="ddmenu">
+      <li><a href="#">HOME</a></li>
+      <li><a href="#">ニュース</a>
+        <ul>
+          <li><a href="#">新製品 &raquo;</a>
+            <ul>
+              <li><a href="#">ハードウェア</a></li>
+              <li><a href="#">ソフトウェア</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="#">新サービス</a></li>
+      <li><a href="#">弊社について</a></li>
+      <li><a href="#">製品・技術</a>
+        <ul>
+          <li><a href="#">ハードウェア &raquo;</a>
+            <ul>
+              <li><a href="#">法人向け</a></li>
+              <li><a href="#">個人向け</a></li>
+            </ul>
+          </li>
+          <li><a href="#">ソフトウェア &raquo;</a>
+            <ul>
+              <li><a href="#">for Windows</a></li>
+              <li><a href="#">for Mac</a></li>
+              <li><a href="#">for Android</a></li>
+              <li><a href="#">for iOS</a></li>
+              <li><a href="#">その他</a></li>
+            </ul>
+          </li>
+          <li><a href="#">ウェブサービス</a></li>
+        </ul>
+      </li>
+      <li><a href="#">会社情報</a>
+        <ul>
+          <li><a href="#">会社概要 &raquo;</a>
+            <ul>
+              <li><a href="#">グループ概要</a></li>
+              <li><a href="#">本社概要</a></li>
+            </ul>
+          </li>
+          <li><a href="#">社長挨拶</a></li>
+          <li><a href="#">沿革</a></li>
+          <li><a href="#">所在地 &raquo;</a>
+            <ul>
+              <li><a href="#">本社</a></li>
+              <li><a href="#">支社</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="#">お問い合わせ</a>
+        <ul class="sub">
+          <li><a href="#">よくあるご質問 &raquo;</a>
+            <ul>
+              <li><a href="#">サービスに関して</a></li>
+              <li><a href="#">弊社に関して</a></li>
+              <li><a href="#">その他</a></li>
+            </ul>
+          </li>
+          <li><a href="#">お問い合わせ先 &raquo;</a>
+            <ul>
+              <li><a href="#">大阪本社</a></li>
+              <li><a href="#">支社 &raquo;</a>
+                <ul><li><a href="#">神戸支社</a></li>
+                <li><a href="#">京都営業所</a></li>
+                <li><a href="#">奈良営業所</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+  </header>
+  <body onContextMenu="alert('右クリック禁止');return false" unselectable="on">
+    {% block content %}
+    <!-- ここに別ファイルで書いたコンテンツが入る -->
+    {% endblock %}
+  </body>
+  <footer>
+
+    <div class="discord">
+      <iframe src="https://discord.com/widget?id=808283612105408533&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
+    </div>
+    <div class="links">
+      <a href="{{url_for('index')}}">Home</a>
+      <br>
+      <a href="{{url_for('Vocaleague')}}">Vocaleague</a>
+      <br>
+      <a href="{{url_for('Servers')}}">Servers</a>
+    </div>
+
+  </footer>
+
+</html>

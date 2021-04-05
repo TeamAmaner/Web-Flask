@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+{% block content %}
+<h3>Hello message</h3>
+hello! {{ name0 }}
+<br>
+<a href="{{url_for('index')}}">go to Index</a>
+<br>
+<a href="{{url_for('hello_function', page_name='Taro')}}">go to Taro</a>
+{% endblock %}

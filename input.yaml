@@ -1,0 +1,9 @@
+jobs:
+  job1:
+    environment: DISCORD_CLIENT_ID
+  job2:
+    environment: DISCORD_CLIENT_SECRET
+  job3:
+    environment: DISCORD_REDIRECT_URI
+  job4:
+    environment: DISCORD_BOT_TOKEN
