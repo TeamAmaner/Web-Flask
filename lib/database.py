@@ -3,6 +3,7 @@ from typing import Union, Any, List, Tuple
 import asyncpg
 import os
 from pymongo import MongoClient, DESCENDING
+import json
 
 import setting
 
@@ -32,11 +33,11 @@ class Database:
     def get_guilds(self):
         data_list = []
         db = self.db or self.setup()
-        datas = db.find_one()
+        datas = db.find()
         if not datas:
             return None
         for data in datas:
-            data_list.append(data["guild"])
+            data_list.append({"name":data["name"], "description":data["description"], "invitation":data["invitation"]})
         return data_list
 
     def rset(self):
@@ -44,10 +45,8 @@ class Database:
         db = client.web
         db.drop_collection(db.guilds)
 
-    async def create_guild(self, des, url):
+    def create_guild(self, des, url, name):
         db = self.db or self.setup()
-        invite = await bot.fetch_invite(url)
-        guild = invite.guild
-        guild.description = des
-        post = {"guild":guild, "invitation":url}
+        post = {"name":name, "description":des, "invitation":url}
         db.insert_one(post)
+        return post

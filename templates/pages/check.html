@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% block meta_links %}
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/servers.css')}}"/>
+{% endblock %}
+
+{% block content %}
+<h1 class="title">
+  確認
+</h1>
+
+<section class="body">
+
+  {% if server %}
+  <h2 class="box">
+    <section class="name">
+      {{server["name"]}}
+    </section>
+    <br>
+    <section class="description">
+      {{server["description"]}}
+    </section>
+    <input type="button" onclick="location.href='{{ url_for('Servers') }}'" value="確定">
+  </h2>
+  {% else %}
+  <h2 class="box">
+    <section class="name">
+      登録エラーが発生しました
+    </section>
+    <section class="description">
+      もう一度<b><a href="{{url_for('Reg')}}">ここ</a></b> から登録しなおしてください
+    </section>
+  </h2>
+  {% endif %}
+
+</section>
+{% endblock %}

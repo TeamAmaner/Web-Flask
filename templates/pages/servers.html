@@ -5,7 +5,7 @@
 
 {% block content %}
 <h1 class="title">
-  派生鯖一覧
+  Amaner鯖一覧
 </h1>
 
 <section class="body">
@@ -20,6 +20,7 @@
       <br>
     </section>
   </h2>
+
   <!-- <h2 class="box">
     <section class="name">
       游|界隈ゲーム作成
@@ -39,23 +40,34 @@
       ※15歳未満 立ち入り禁止
     </section>
   </h2> -->
+
   {% if server_list %}
     {% for server in server_list %}
     <h2 class="box">
-      <img src="{{server.icon_url}}" alt="{{server.name}}">
       <section class="name">
-        {{server.name}}
+        <a href="{{server["invitation"]}}">{{server["name"]}}</a>
       </section>
       <br>
       <section class="description">
-        {{server.description}}
+        {{server["description"]}}
       </section>
     </h2>
     {% endfor %}
+    <h2 class="box">
+      <section class="name">
+        現在登録されている派生鯖は{{ count }}つです。
+      </section>
+      <section class="description">
+        派生鯖登録は、<b><a href="{{url_for('Reg')}}">こちら</a></b>
+      </section>
+    </h2>
   {% else %}
   <h2 class="box">
     <section class="name">
       現在、登録されている派生鯖はありません。
+    </section>
+    <section class="description">
+      派生鯖登録は、<b><a href="{{url_for('Reg')}}">こちら</a></b>
     </section>
   </h2>
   {% endif %}
