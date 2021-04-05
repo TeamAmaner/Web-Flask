@@ -43,17 +43,29 @@ def Reg():
     title="Registration",
     )
 
-@app.route("/Check/", methods=['POST'])
+@app.route("/Check/", methods=['GET'])
 def Check():
-    des = request.form["Server Description"]
-    url = request.form['Server Invitation']
-    name = request.form['Server Name']
+    des = request.args.get("Server Description","")
+    url = request.args.get('Server Invitation',"")
+    name = request.args.get('Server Name',"")
     ret = db.create_guild(des, url, name)
     return render_template(
     "/pages/check.html",
     title="Check",
     server=ret,
     )
+
+# @app.route("/Check/", methods=['POST'])
+# def Check():
+#     des = request.form["Server Description"]
+#     url = request.form['Server Invitation']
+#     name = request.form['Server Name']
+#     ret = db.create_guild(des, url, name)
+#     return render_template(
+#     "/pages/check.html",
+#     title="Check",
+#     server=ret,
+#     )
 
 
 if __name__ == "__main__":
